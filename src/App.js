@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import HeightAndWidthAnimation from "./HeightAndWidthAnimation";
+import AbsolutePosition from "./AbsolutePositionAnimations";
 
 export default class App extends Component {
   render() {
     return (
-          <HeightAndWidthAnimation />
+          <AbsolutePosition />
 
     );
   }
