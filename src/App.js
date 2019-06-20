@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import ScaledAnimation from "./ScaledAnimations";
+import HeightAndWidthAnimation from "./HeightAndWidthAnimation";
 
 export default class App extends Component {
   render() {
     return (
-          <ScaledAnimation />
+          <HeightAndWidthAnimation />
 
     );
   }

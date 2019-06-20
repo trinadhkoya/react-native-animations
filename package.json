@@ -2,7 +2,13 @@
   "name": "react-native",
   "version": "1.0.0",
   "description": "React Native for Web starter template",
-  "keywords": [],
+  "keywords": [
+    "react-native",
+    "how-todo-in-react-native",
+    "react-native-animations",
+    "react native",
+    "react-native-beginner"
+  ],
   "main": "src/index.js",
   "dependencies": {
     "react": "16.5.1",
