@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Interpolation from "./Interpolation";
+import Easing from "./Easing";
 
 export default class App extends Component {
   render() {
     return (
-          <Interpolation />
+          <Easing />
 
     );
   }
