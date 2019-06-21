@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import Easing from "./Easing";
+import Math from "./AnimationsUsingMath";
 
 export default class App extends Component {
   render() {
-    return (
-          <Easing />
-
-    );
+    return <Math />;
   }
 }
-
