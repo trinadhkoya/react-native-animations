@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import AbsolutePosition from "./AbsolutePositionAnimations";
+import Interpolation from "./Interpolation";
 
 export default class App extends Component {
   render() {
     return (
-          <AbsolutePosition />
+          <Interpolation />
 
     );
   }
