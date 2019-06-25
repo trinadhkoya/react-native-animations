@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Math from "./AnimationsUsingMath";
-
+import ClifAnimation from "./MultiTap";
 export default class App extends Component {
   render() {
-    return <Math />;
+    return <ClifAnimation />;
   }
 }

@@ -6,64 +6,41 @@ import {
   TouchableWithoutFeedback
 } from "react-native";
 
-export default class InterPolationWithNumbers extends Component {
+export default class animations extends Component {
   state = {
-    animation: new Animated.Value(0)
+    animation: new Animated.Value(20)
   };
-  startAnimation = () => {
+  componentDidMount() {}
+
+  doSomeThing = () => {
     Animated.timing(this.state.animation, {
-      toValue: 1,
-      duration: 3000
+      toValue: 100,
+      duration: 1000
     }).start(() => {
       Animated.timing(this.state.animation, {
-        toValue: 0,
+        toValue: 200,
         duration: 1000
-      }).start();
+      });
     });
   };
 
   render() {
-    const animatedInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 1, 2],
-      outputRange: [0, 300, 0]
-    });
-
-    const interpolatedInterpolate = animatedInterpolate.interpolate({
-      inputRange: [0, 300, 400],
-      outputRange: [1, 0.5, 2]
-    });
-    const translateXInterpolation = animatedInterpolate.interpolate({
-      inputRange: [0, 30, 50, 100, 100, 200, 300],
-      outputRange: [20, -40, 50, -100, 205, 100, 400]
-    });
-
-    const backgroudnColorInterPolation = animatedInterpolate.interpolate({
-      inputRange: [0, 30, 50, 100, 100, 200, 300],
-      outputRange: [
-        "tomato",
-        "cyan",
-        "red",
-        "black",
-        "orange",
-        "yellow",
-        "white"
-      ]
+    const animatedInterpolation = this.state.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0, 2]
     });
 
     const animatedStyles = {
-      transform: [
-        { translateY: animatedInterpolate },
-        { translateX: translateXInterpolation }
-      ],
-      opacity: interpolatedInterpolate,
-      backgroundColor: backgroudnColorInterPolation
+      height: animatedInterpolation
     };
+
     return (
-      <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.startAnimation}>
-          <Animated.View style={[styles.box, animatedStyles]} />
-        </TouchableWithoutFeedback>
-      </View>
+      <TouchableWithoutFeedback
+        style={styles.container}
+        onPress={this.doSomeThing}
+      >
+        <Animated.View style={[styles.box, animatedStyles]} />
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -75,8 +52,8 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   box: {
-    width: 150,
-    height: 150,
-    backgroundColor: "#ff8800"
+    width: 200,
+    backgroundColor: "tomato",
+    height: 200
   }
 });
